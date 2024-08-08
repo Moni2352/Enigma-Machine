@@ -1,5 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using IMGUI_Render;
+﻿using IMGUI_Render;
 
 
 // start imgui in a seperate thread
@@ -207,4 +206,13 @@ Dictionary<int, Dictionary<int, int>> Main_Dictionary =
                 {5, Reflector}
             };
 
-
+namespace functions
+{
+    public class Program_Main
+    {
+        public string Convert(string input)
+        {
+            return "1";
+        }
+    }
+}

@@ -5,18 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using ClickableTransparentOverlay;
 using IMGUI_Render;
+using functions;
 using ImGuiNET;
+
+
+
 
 namespace IMGUI_Render
 {
     public class Renderer : Overlay
     {
+        Program_Main Programs = new Program_Main();
 
         string[] discs = { "Rotor I", "Rotor II", "Rotor III", "Rotor IV", "Rotor V" };
         public static int[] selectedIndices = [0, 1, 2]; // Indices for the selected elements in each dropdown
         public static int Rotation_A = 1;
         public static int Rotation_B = 1;
         public static int Rotation_C = 1;
+
+        public static string textinput = string.Empty;
+        string ConvertedText = "hello";
         protected override void Render()
         {
             // Draw stuff here
@@ -25,7 +33,14 @@ namespace IMGUI_Render
             ImGui.BeginTabBar("Tabs");
             if (ImGui.BeginTabItem("Conversion"))
             {
-                ImGui.Text("1");
+                ImGui.InputText("Text to Convert", ref textinput, 500);
+                if (ImGui.Button("Convert"))
+                {
+                    ConvertedText = Programs.Convert(textinput);
+                }
+
+                ImGui.Text($"Converted Text: {ConvertedText}");
+
                 ImGui.EndTabItem();
             }
 
