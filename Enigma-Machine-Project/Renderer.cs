@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClickableTransparentOverlay;
-using IMGUI_TEST;
+using IMGUI_Render;
 using ImGuiNET;
 
-namespace IMGUI_TEST
+namespace IMGUI_Render
 {
     public class Renderer : Overlay
     {
 
         string[] discs = { "Rotor I", "Rotor II", "Rotor III", "Rotor IV", "Rotor V" };
-        int[] selectedIndices = { 0, 1, 2 }; // Indices for the selected elements in each dropdown
-
+        public static int[] selectedIndices = [0, 1, 2]; // Indices for the selected elements in each dropdown
+        public static int Rotation_A = 1;
+        public static int Rotation_B = 1;
+        public static int Rotation_C = 1;
         protected override void Render()
         {
             // Draw stuff here
@@ -67,10 +69,19 @@ namespace IMGUI_TEST
                         ImGui.EndCombo();
                     }
                 }
+                // Drop Down Menus
 
-                // selectedIndices now contains the indices of the selected elements for each dropdown
+                ImGui.SliderInt("Rotation of Rotor A", ref Rotation_A, 1, 26);
+                ImGui.SliderInt("Rotation of Rotor B", ref Rotation_B, 1, 26);
+                ImGui.SliderInt("Rotation of Rotor C", ref Rotation_C, 1, 26);
 
-
+                if (ImGui.Button("Reset Settings"))
+                {
+                    selectedIndices = [0,1,2];
+                    Rotation_A = 1;
+                    Rotation_B = 1;
+                    Rotation_C = 1;
+                }
 
                 ImGui.EndTabItem();
             }
