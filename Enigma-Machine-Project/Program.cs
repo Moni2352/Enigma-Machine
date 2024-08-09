@@ -1,17 +1,13 @@
 ﻿using IMGUI_Render;
 
+public class Program
+{
 
-// start imgui in a seperate thread
-Renderer renderer = new Renderer();
-Thread renderThread = new Thread(renderer.Start().Wait);
-renderThread.Start();
+    // Encryption Dictionaries
 
-
-// Encryption Dictionaries
-
-Dictionary<int, int> Rotor_1 =
-            new Dictionary<int, int>
-            {
+    static Dictionary<int, int> Rotor_1 =
+                new Dictionary<int, int>
+                {
                 { 1, 10 },
                 { 2, 15 },
                 { 3, 7 },
@@ -38,11 +34,11 @@ Dictionary<int, int> Rotor_1 =
                 { 24, 25 },
                 { 25, 24 },
                 { 26, 17 }
-            };
+                };
 
-Dictionary<int, int> Rotor_2 =
-            new Dictionary<int, int>
-            {
+    static Dictionary<int, int> Rotor_2 =
+                new Dictionary<int, int>
+                {
                 { 1, 14 },
                 { 2, 5 },
                 { 3, 19 },
@@ -69,11 +65,11 @@ Dictionary<int, int> Rotor_2 =
                 { 24, 17 },
                 { 25, 9 },
                 { 26, 20}
-            };
+                };
 
-Dictionary<int, int> Rotor_3 =
-            new Dictionary<int, int>
-            {
+    static Dictionary<int, int> Rotor_3 =
+                new Dictionary<int, int>
+                {
                 { 1, 20 },
                 { 2, 25 },
                 { 3, 19 },
@@ -100,11 +96,11 @@ Dictionary<int, int> Rotor_3 =
                 { 24, 5 },
                 { 25, 2 },
                 { 26, 15 }
-            };
+                };
 
-Dictionary<int, int> Rotor_4 =
-            new Dictionary<int, int>
-            {
+    static Dictionary<int, int> Rotor_4 =
+                new Dictionary<int, int>
+                {
                 { 1, 5 },
                 { 2, 12 },
                 { 3, 25 },
@@ -131,11 +127,11 @@ Dictionary<int, int> Rotor_4 =
                 { 24, 8 },
                 { 25, 3 },
                 { 26, 16 }
-            };
+                };
 
-Dictionary<int, int> Rotor_5 =
-            new Dictionary<int, int>
-            {
+    static Dictionary<int, int> Rotor_5 =
+                new Dictionary<int, int>
+                {
                 { 1, 18 },
                 { 2, 10 },
                 { 3, 15 },
@@ -162,11 +158,11 @@ Dictionary<int, int> Rotor_5 =
                 { 24, 9 },
                 { 25, 5 },
                 { 26, 12 }
-            };
+                };
 
-Dictionary<int, int> Reflector =
-            new Dictionary<int, int>
-            {
+    static Dictionary<int, int> Reflector =
+                new Dictionary<int, int>
+                {
                 { 1, 9 },
                 { 2, 18 },
                 { 3, 20 },
@@ -193,26 +189,110 @@ Dictionary<int, int> Reflector =
                 { 24, 21 },
                 { 25, 5 },
                 { 26, 13 }
-            };
+                };
 
-Dictionary<int, Dictionary<int, int>> Main_Dictionary =
-            new Dictionary<int, Dictionary<int, int>>
-            {
+    static Dictionary<int, Dictionary<int, int>> Main_Dictionary =
+                new Dictionary<int, Dictionary<int, int>>
+                {
                 {0, Rotor_1},
                 {1, Rotor_2},
                 {2, Rotor_3},
                 {3, Rotor_4},
                 {4, Rotor_5},
                 {5, Reflector}
-            };
+                };
 
-namespace functions
-{
-    public class Program_Main
+
+    private static void Main(string[] args)
     {
-        public string Convert(string input)
+        // start imgui in a seperate thread
+        Renderer renderer = new Renderer();
+        Thread renderThread = new Thread(renderer.Start().Wait);
+        renderThread.Start();
+    }
+
+    public string Convert(string input)
+    {
+        List<string> converted_Text = [];
+        string result = input;
+
+
+
+        // For Loop To Convert
+        for (int i = 0; i < input.Length; i++)
         {
-            return "1";
+            Increment();
+
+            if (char.IsLetter(input[i]))
+            {
+                char letter = char.ToLower(input[i]);
+                int numtext = Converter(letter - 'a' + 1);
+                char Cletter = (char)(numtext + 'a' - 1);
+                converted_Text.Add(Cletter.ToString());
+            }
+            else
+            {
+                converted_Text.Add(input[i].ToString());
+            }
+        }
+
+        return string.Join("", converted_Text);
+    }
+
+    void Increment()
+    {
+        Renderer.Rotation_C++;
+
+        if (Renderer.Rotation_C > 26)
+        {
+            Renderer.Rotation_C = 1;
+            Renderer.Rotation_B++;
+        }
+
+        if (Renderer.Rotation_B > 26)
+        {
+            Renderer.Rotation_B = 1;
+            Renderer.Rotation_A++;
+        }
+
+        if (Renderer.Rotation_A > 26)
+        {
+            Renderer.Rotation_A = 1;
         }
     }
+
+    int Converter(int imput)
+    {
+        int C1 = ConvertVal(imput, Renderer.selectedIndices[2], Renderer.Rotation_C);
+        int C2 = ConvertVal(C1, Renderer.selectedIndices[1], Renderer.Rotation_B);
+        int C3 = ConvertVal(C2, Renderer.selectedIndices[0], Renderer.Rotation_A);
+        int C4 = ConvertVal(C3, 5, 0);
+        int C5 = ConvertVal(C4, Renderer.selectedIndices[0], Renderer.Rotation_A);
+        int C6 = ConvertVal(C5, Renderer.selectedIndices[1], Renderer.Rotation_B);
+        int Converted_Value = ConvertVal(C6, Renderer.selectedIndices[2], Renderer.Rotation_C);
+
+        return Converted_Value;
+    }
+
+    int ConvertVal(int input, int Selected, int offset)
+    {
+        int cleanoffset = input;
+
+        cleanoffset = input + offset;
+
+        if (cleanoffset > 26)
+        {
+            cleanoffset -= 26;
+        }
+
+        int output = Main_Dictionary[Selected][cleanoffset] - offset;
+
+        if (output < 1)
+        {
+            output += 26;
+        }
+
+        return output;
+    }
+
 }

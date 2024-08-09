@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Renderer.cs",
-              "DocumentMoniker": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Renderer.cs",
-              "RelativeDocumentMoniker": "Renderer.cs",
-              "ToolTip": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Renderer.cs",
-              "RelativeToolTip": "Renderer.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T21:08:27.728Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -41,9 +28,21 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAANUAAAAJAAAA",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAAAO0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T21:04:56.341Z",
+              "WhenOpened": "2024-08-08T21:04:56.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Renderer.cs",
+              "RelativeDocumentMoniker": "Renderer.cs",
+              "ToolTip": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Renderer.cs",
+              "RelativeToolTip": "Renderer.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T21:08:27.728Z",
               "EditorCaption": ""
             }
           ]
