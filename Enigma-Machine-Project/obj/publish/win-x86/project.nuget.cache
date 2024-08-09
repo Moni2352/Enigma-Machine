@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sIOYue5mBrk=",
+  "dgSpecHash": "46uWp8Z5vCg=",
   "success": true,
   "projectFilePath": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Enigma-Machine-Project.csproj",
   "expectedPackageFiles": [
@@ -20,8 +20,7 @@
     "C:\\Users\\marcu\\.nuget\\packages\\vortice.mathematics\\1.7.2\\vortice.mathematics.1.7.2.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.7\\microsoft.netcore.app.runtime.win-x86.8.0.7.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.7\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.7.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.7\\microsoft.aspnetcore.app.runtime.win-x86.8.0.7.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.7\\microsoft.netcore.app.crossgen2.win-x64.8.0.7.nupkg.sha512"
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.7\\microsoft.aspnetcore.app.runtime.win-x86.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

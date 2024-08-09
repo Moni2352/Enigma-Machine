@@ -1,8 +1,6 @@
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.deps.json
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.runtimeconfig.json
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.exe
-C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.dll.manifest
-C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.application
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.dll
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\Enigma-Machine-Project.pdb
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\win-x86\ClickableTransparentOverlay.dll
@@ -205,9 +203,6 @@ C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Releas
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.csproj.CoreCompileInputs.cache
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.sourcelink.json
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.genruntimeconfig.cache
-C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.genpublishdeps.cache
-C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.dll.manifest
-C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.application
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-M.D22691A7.Up2Date
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\Enigma-Machine-Project.dll
 C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\obj\Release\net8.0\win-x86\refint\Enigma-Machine-Project.dll

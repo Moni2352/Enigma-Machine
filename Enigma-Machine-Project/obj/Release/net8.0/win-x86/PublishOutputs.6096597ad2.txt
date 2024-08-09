@@ -1,0 +1,3 @@
+C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\publish\win-x86\Enigma-Machine-Project.pdb
+C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\publish\win-x86\cimgui.dll
+C:\Users\marcu\Documents\GitHub\Enigma-Machine\Enigma-Machine-Project\bin\Release\net8.0\publish\win-x86\Enigma-Machine-Project.exe
