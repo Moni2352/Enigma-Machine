@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "yiXemhIUD+c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marcu\\Documents\\GitHub\\Enigma-Machine\\Enigma-Machine-Project\\Enigma-Machine-Project.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marcu\\.nuget\\packages\\clickabletransparentoverlay\\9.1.0\\clickabletransparentoverlay.9.1.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\imgui.net\\1.90.0.1\\imgui.net.1.90.0.1.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.7\\microsoft.net.illink.tasks.8.0.7.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\sharpgen.runtime\\2.1.2-beta\\sharpgen.runtime.2.1.2-beta.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\sharpgen.runtime.com\\2.1.2-beta\\sharpgen.runtime.com.2.1.2-beta.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\sixlabors.imagesharp\\3.0.2\\sixlabors.imagesharp.3.0.2.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\vortice.d3dcompiler\\3.3.4\\vortice.d3dcompiler.3.3.4.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\vortice.direct3d11\\3.3.4\\vortice.direct3d11.3.3.4.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\vortice.directx\\3.3.4\\vortice.directx.3.3.4.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\vortice.dxgi\\3.3.4\\vortice.dxgi.3.3.4.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\vortice.mathematics\\1.7.2\\vortice.mathematics.1.7.2.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.netcore.app.runtime.osx-x64\\8.0.7\\microsoft.netcore.app.runtime.osx-x64.8.0.7.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.osx-x64\\8.0.7\\microsoft.aspnetcore.app.runtime.osx-x64.8.0.7.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.netcore.app.host.osx-x64\\8.0.7\\microsoft.netcore.app.host.osx-x64.8.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
