@@ -16,11 +16,13 @@ namespace IMGUI_Render
     {
         Program Programs = new Program();
 
-        string[] discs = { "Rotor I", "Rotor II", "Rotor III", "Rotor IV", "Rotor V" };
-        public static int[] selectedIndices = [0, 1, 2]; // Indices for the selected elements in each dropdown
-        public static int Rotation_A = 1;
-        public static int Rotation_B = 1;
-        public static int Rotation_C = 1;
+        string[] discs = { "Rotor 1", "Rotor 2", "Rotor 3", "Rotor 4", "Rotor 5", "Rotor 6", "Rotor 7", "Rotor 8", "Rotor 9", "Rotor 10", "Rotor 11", "Rotor 12", "Rotor 13", "Rotor 14", "Rotor 15", "Rotor 16", "Rotor 17", "Rotor 18", "Rotor 19", "Rotor 20" };
+        public static int[] selectedIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // Indices for the selected elements in each dropdown
+
+        public static int NumOfRotors = 3;
+
+        public static int[] RotorRotations = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        public static string[] RotorNames = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
 
         string textinput = string.Empty;
         string ConvertedText = "";
@@ -51,7 +53,9 @@ namespace IMGUI_Render
             if (ImGui.BeginTabItem("Settings"))
             {
 
-                for (int comboIndex = 0; comboIndex < selectedIndices.Length; comboIndex++)
+                ImGui.SliderInt("Number Of Rotors", ref NumOfRotors, 3, 10);
+
+                for (int comboIndex = 0; comboIndex < NumOfRotors; comboIndex++)
                 {
                     // Display the current selection or "Select..." if none is selected
                     string preview = selectedIndices[comboIndex] >= 0 ? discs[selectedIndices[comboIndex]] : "Select...";
@@ -90,16 +94,21 @@ namespace IMGUI_Render
                 }
                 // Drop Down Menus
 
-                ImGui.SliderInt("Rotation of Rotor A", ref Rotation_A, 1, 26);
-                ImGui.SliderInt("Rotation of Rotor B", ref Rotation_B, 1, 26);
-                ImGui.SliderInt("Rotation of Rotor C", ref Rotation_C, 1, 26);
+            
+                for (int RotationIndex = 0; RotationIndex < NumOfRotors; RotationIndex++)
+                {
+                    ImGui.SliderInt($"Rotation Of Rotor {RotorNames[RotationIndex]}", ref RotorRotations[RotationIndex], 0, 40);
+                }
 
                 if (ImGui.Button("Reset Settings"))
                 {
-                    selectedIndices = [0,1,2];
-                    Rotation_A = 1;
-                    Rotation_B = 1;
-                    Rotation_C = 1;
+                    NumOfRotors = 3;
+                    selectedIndices = [0,1,2, 3, 4, 5, 6, 7, 8, 9];
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        RotorRotations[i] = 0;
+                    }
                 }
 
                 ImGui.EndTabItem();

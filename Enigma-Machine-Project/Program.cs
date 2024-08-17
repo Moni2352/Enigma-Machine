@@ -241,37 +241,13 @@ public class Program
 
     void Increment()
     {
-        Renderer.Rotation_C++;
-
-        if (Renderer.Rotation_C > 26)
-        {
-            Renderer.Rotation_C = 1;
-            Renderer.Rotation_B++;
-        }
-
-        if (Renderer.Rotation_B > 26)
-        {
-            Renderer.Rotation_B = 1;
-            Renderer.Rotation_A++;
-        }
-
-        if (Renderer.Rotation_A > 26)
-        {
-            Renderer.Rotation_A = 1;
-        }
+      
     }
 
     int Converter(int imput)
     {
-        int C1 = ConvertVal(imput, Renderer.selectedIndices[2], Renderer.Rotation_C);
-        int C2 = ConvertVal(C1, Renderer.selectedIndices[1], Renderer.Rotation_B);
-        int C3 = ConvertVal(C2, Renderer.selectedIndices[0], Renderer.Rotation_A);
-        int C4 = ConvertVal(C3, 5, 0);
-        int C5 = ConvertVal(C4, Renderer.selectedIndices[0], Renderer.Rotation_A);
-        int C6 = ConvertVal(C5, Renderer.selectedIndices[1], Renderer.Rotation_B);
-        int Converted_Value = ConvertVal(C6, Renderer.selectedIndices[2], Renderer.Rotation_C);
-
-        return Converted_Value;
+      
+        return 0;
     }
 
     int ConvertVal(int input, int Selected, int offset)
@@ -280,16 +256,16 @@ public class Program
 
         cleanoffset = input + offset;
 
-        if (cleanoffset > 26)
+        if (cleanoffset > 40)
         {
-            cleanoffset -= 26;
+            cleanoffset -= 40;
         }
 
         int output = Main_Dictionary[Selected][cleanoffset] - offset;
 
         if (output < 1)
         {
-            output += 26;
+            output += 40;
         }
 
         return output;
