@@ -31,6 +31,7 @@ namespace IMGUI_Render
 
 
                 }
+
                 if (ImGui.Button("Update"))
             {
                 for (int i = 0; i < A.Length; i++)
@@ -39,7 +40,14 @@ namespace IMGUI_Render
                     {
                         B[Array.IndexOf(A, B[i])] = A[i];
                     }
-                    Console.WriteLine(B[i].ToString());
+                }
+            }
+
+                if (ImGui.Button("Post To Console"))
+            {
+                for (global::System.Int32 i = 0; i < 40; i++)
+                {
+                    Console.WriteLine("{\"" + A[i] + "\",\"" + B[i] + "\"},");
                 }
             }
         }
