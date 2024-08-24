@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Enigma-Machine-Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1133a7b7379493739b75cb15f90ddd1c2a42526")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e941e68c5a76de0e4e500ce24db2776d4f83830")]
 [assembly: System.Reflection.AssemblyProductAttribute("Enigma-Machine-Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Enigma-Machine-Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
