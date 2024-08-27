@@ -17,7 +17,7 @@ namespace IMGUI_Render
         Program Programs = new Program();
 
         string[] discs = { "Rotor 1", "Rotor 2", "Rotor 3", "Rotor 4", "Rotor 5", "Rotor 6", "Rotor 7", "Rotor 8", "Rotor 9", "Rotor 10", "Rotor 11", "Rotor 12", "Rotor 13", "Rotor 14", "Rotor 15", "Rotor 16", "Rotor 17", "Rotor 18", "Rotor 19", "Rotor 20" };
-        public static int[] selectedIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // Indices for the selected elements in each dropdown
+        public static int[] selectedIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20]; // Indices for the selected elements in each dropdown
 
         public static int NumOfRotors = 3;
 
@@ -32,14 +32,45 @@ namespace IMGUI_Render
             ImGui.Begin("Enigma-Machine | Version 0.1");
 
             ImGui.BeginTabBar("Tabs");
+            
             if (ImGui.BeginTabItem("Conversion"))
             {
-                ImGui.InputText("Text to Convert", ref textinput, 500);
-                if (ImGui.Button("Convert"))
+
+                ImGui.Text("Current Settings: ");
+
+                for (int i = 0; i < NumOfRotors; i++)
+                {
+                    ImGui.SameLine();
+                    ImGui.TextWrapped(RotorRotations[i].ToString() + ", ");
+                }
+
+                for (int i = 0; i < NumOfRotors; i++)
+                {
+                    ImGui.SameLine();
+                    ImGui.TextWrapped(string.Join(", ", discs[selectedIndices[i]]));
+                }
+
+
+                if (ImGui.InputText("Text to Convert", ref textinput, 200, ImGuiInputTextFlags.EnterReturnsTrue))
                 {
                     ConvertedText = Programs.Convert(textinput);
                 }
 
+                if (ImGui.Button("Convert"))
+                {
+                    ConvertedText = Programs.Convert(textinput);
+                }
+                ImGui.SameLine();
+                if (ImGui.Button("Clear Input"))
+                {
+                    textinput = string.Empty;
+                }    
+               ImGui.SameLine();
+                if (ImGui.Button("Clear Output"))
+                {
+                    ConvertedText = "";
+                }
+               
                 ImGui.Text($"Converted Text: {ConvertedText}");
 
                 if(ImGui.Button("Exit"))
@@ -103,7 +134,7 @@ namespace IMGUI_Render
                 if (ImGui.Button("Reset Settings"))
                 {
                     NumOfRotors = 3;
-                    selectedIndices = [0,1,2, 3, 4, 5, 6, 7, 8, 9];
+                    selectedIndices = [0,1,2, 3, 4, 5, 6, 7, 8, 9, 20];
 
                     for (int i = 0; i < 10; i++)
                     {
@@ -113,7 +144,12 @@ namespace IMGUI_Render
 
                 ImGui.EndTabItem();
             }
-            
+         
+            if (ImGui.BeginTabItem("Notes"))
+            {
+                ImGui.TextWrapped("Hello Welcome To My Enigma Machine. \nLet Me Walk You Through It. \nYou Can Change The Amount Of Rotors Used To Encrypt, \nThere Rotation, \nand which ones you use in the settings menu.\n \nTo Convert Text GoTo The Convert Tab. \nThere You Can Find The Input Field.\nTo Convert You Can Press Enter\nOr The Convert Button.\n\nThats All");
+            }
+
             ImGui.EndTabBar();
 
             ImGui.End();

@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Collections;
+using System.Runtime.InteropServices;
 using IMGUI_Render;
 
 
@@ -956,6 +957,50 @@ public class Program
                     {"!","V"}
                 };
 
+    static Dictionary<string, int> Translator =
+                new Dictionary<string, int>
+                {
+                    {"A",1},
+                    {"B",2},
+                    {"C",3},
+                    {"D",4},
+                    {"E",5},
+                    {"F",6},
+                    {"G",7},
+                    {"H",8},
+                    {"I",9},
+                    {"J",10},
+                    {"K",11},
+                    {"L",12},
+                    {"M",13},
+                    {"N",14},
+                    {"O",15},
+                    {"P",16},
+                    {"Q",17},
+                    {"R",18},
+                    {"S",19},
+                    {"T",20},
+                    {"U",21},
+                    {"V",22},
+                    {"W",23},
+                    {"X",24},
+                    {"Y",25},
+                    {"Z",26},
+                    {"0",27},
+                    {"1",28},
+                    {"2",29},
+                    {"3",30},
+                    {"4",31},
+                    {"5",32},
+                    {"6",33},
+                    {"7",34},
+                    {"8",35},
+                    {"9",36},
+                    {".",37},
+                    {",",38},
+                    {"?",39},
+                    {"!",40}
+                };
     static Dictionary<int, Dictionary<string, string>> Main_Dictionary =
                 new Dictionary<int, Dictionary<string, string>>
                 {
@@ -1001,18 +1046,88 @@ public class Program
     public string Convert(string input)
     {
         string output = "";
-        
+        string CleanText = input.ToUpper();
+
         for (int i = 0; i < input.Length; i++)
         {
             // Increment Rotors
             Increment();
 
-            output += "A";
+            output += ConvertChar(CleanText[i]);
         }
 
         return output;
     }
 
+    // Function To Convert A single Letter
+    string ConvertChar(char input)
+    {
+
+        if (!Translator.ContainsKey(input.ToString()))
+        {
+            return input.ToString();
+        }
+
+
+        char NewInput = input;
+
+        // Into Rotors
+        for (int i = 0; i < Renderer.NumOfRotors; i++)
+        {
+           NewInput = RotorConvert(NewInput, i);
+        }
+
+        // Reflector
+        NewInput = RotorConvert(NewInput, 10);
+
+        // Out Of Rotors
+
+        for (int i = Renderer.NumOfRotors - 1; i >= 0; i--)
+        {
+            NewInput = RotorConvert(NewInput, i);
+        }
+
+
+        return NewInput.ToString();
+    }
+
+    // Rotor Convert Function
+
+    char RotorConvert(char input, int RotorUsed)
+    {
+
+        int NumChar = Translator[input.ToString()];
+        int RotorRotation = 0;
+
+            if (RotorUsed != 10)
+            {
+                RotorRotation = Renderer.RotorRotations[RotorUsed];
+            } 
+
+            int CleanOffset = NumChar + RotorRotation;
+
+            if (CleanOffset > 40)
+            {
+                CleanOffset -= 40;
+            }
+
+
+
+            string OffsetChar = Translator.FirstOrDefault(x => x.Value == CleanOffset).Key;
+
+            string PostConvert = Main_Dictionary[Renderer.selectedIndices[RotorUsed]][OffsetChar];
+
+            int ConvertedInt = Translator[PostConvert];
+            ConvertedInt -= RotorRotation;
+
+            if (ConvertedInt < 1)
+            {
+                ConvertedInt += 40;
+            }
+
+            
+            return Translator.FirstOrDefault(x => x.Value == ConvertedInt).Key[0];
+    }
 
     // Increment Funtion
     void Increment()
