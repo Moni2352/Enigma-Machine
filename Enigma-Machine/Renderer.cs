@@ -12,7 +12,7 @@ namespace IMGUI_Renderer
     {
         protected override void Render()
         {
-            ImGui.Begin("Enigma-Machine Version 1.0");
+            ImGui.Begin("Enigma-M3 Version 1.0");
 
             ImGui.Text("Testing Testing...");
 
