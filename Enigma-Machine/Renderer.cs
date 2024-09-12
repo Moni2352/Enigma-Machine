@@ -7,6 +7,7 @@ using ImGuiNET;
 using ClickableTransparentOverlay;
 using Vortice.DXGI;
 using System.Diagnostics;
+using program;
 
 namespace IMGUI_Renderer
 {
@@ -30,7 +31,7 @@ namespace IMGUI_Renderer
 
                 if (ImGui.Button("Convert"))
                 {
-                    output = input;
+                    output = program.Main.Converter(input);
                 }
                 ImGui.SameLine();
                 if(ImGui.Button("Clear"))
@@ -44,13 +45,15 @@ namespace IMGUI_Renderer
                     Environment.Exit(1);
                 }
 
-                ImGui.Text(output);
+                ImGui.Text($"Converted Text is: {output}");
                 ImGui.EndTabItem();
             }
 
             if(ImGui.BeginTabItem("Settings"))
             {
-                ImGui.Text("Settings");
+                
+
+
                 ImGui.EndTabItem();
             }
 
