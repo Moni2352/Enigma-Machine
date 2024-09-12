@@ -16,11 +16,14 @@ namespace IMGUI_Renderer
 
         string input = string.Empty;
         string output = string.Empty;
-        int[] selectedIndices = { 1, 2, 3 };
-        string[] discs = { "Rotor 1", "Rotor2", "Rotor3", "Rotor4", "Rotor5", "Rotor6", "Rotor7", "Rotor8" };
+       
 
         protected override void Render()
         {
+            int[] selectedIndices = { 0, 1, 2 };
+            string[] discs = { "Rotor1", "Rotor2", "Rotor3", "Rotor4", "Rotor5", "Rotor6", "Rotor7", "Rotor8" };
+
+
             ImGui.Begin("Enigma-M3 Version 1.0");
 
             ImGui.BeginTabBar("Tab Bar");
@@ -85,13 +88,8 @@ namespace IMGUI_Renderer
                                 }
                             }
                         }
-
-
-                        
                     }
-
                 }
-
                 ImGui.EndTabItem();
             }
 
