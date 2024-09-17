@@ -11,17 +11,19 @@ using program;
 
 namespace IMGUI_Renderer
 {
+   
     internal class Renderer : Overlay
     {
-
+        program.Main Program = new program.Main();
         string input = string.Empty;
         string output = string.Empty;
-       
-
+        public static int[] selectedIndices = { 0, 1, 2 };
+        string[] discs = { "Rotor1", "Rotor2", "Rotor3", "Rotor4", "Rotor5", "Rotor6", "Rotor7", "Rotor8" };
+        public static int[] RotorRotations = { 0, 0, 0 };
+  
         protected override void Render()
         {
-            int[] selectedIndices = { 0, 1, 2 };
-            string[] discs = { "Rotor1", "Rotor2", "Rotor3", "Rotor4", "Rotor5", "Rotor6", "Rotor7", "Rotor8" };
+            
 
 
             ImGui.Begin("Enigma-M3 Version 1.0");
@@ -34,7 +36,7 @@ namespace IMGUI_Renderer
 
                 if (ImGui.Button("Convert"))
                 {
-                    output = program.Main.Converter(input);
+                    output = Program.Converter(input);
                 }
                 ImGui.SameLine();
                 if (ImGui.Button("Clear"))
@@ -54,6 +56,7 @@ namespace IMGUI_Renderer
 
             if (ImGui.BeginTabItem("Settings"))
             {
+                ImGui.Text(selectedIndices[0].ToString());
                 for (int comboIndex = 0; comboIndex < selectedIndices.Length; comboIndex++)
                 {
                     // Display the current selection or "Select..." if none is selected
@@ -90,6 +93,9 @@ namespace IMGUI_Renderer
                         }
                     }
                 }
+
+                ImGui.SliderInt3("Rotations", ref RotorRotations[0], 0, 26);
+
                 ImGui.EndTabItem();
             }
 
@@ -98,6 +104,8 @@ namespace IMGUI_Renderer
             ImGui.End();
 
         }
+    
+
     }
 }
-
+    

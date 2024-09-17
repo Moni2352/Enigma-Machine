@@ -6,31 +6,52 @@ Renderer renderer = new Renderer();
 Thread renderThread = new Thread(renderer.Start().Wait);
 renderThread.Start();
 
+
+
 namespace program
 {
     public class Main
     {
 
-        int[] RotorRotations = {0, 0, 0};
+        public int[][] RotorTurn = { [18, 18], [6, 6], [23, 23], [11, 11], [1, 1], [1, 14], [1, 14], [1, 14] };
 
-        string[] Rotor1Turn = { "R" };
-        string[] Rotor2Turn = { "F" };
-        string[] Rotor3Turn = { "W" };
-        string[] Rotor4Turn = { "K" };
-        string[] Rotor5Turn = { "A" };
-        string[] Rotor6Turn = { "A", "N" };
-        string[] Rotor7Turn = { "A", "N" };
-        string[] Rotor8Turn = { "A", "N" };
+        public void Increment()
+        {
+            Renderer.RotorRotations[2]++;
+
+            if (Renderer.RotorRotations[2] == RotorTurn[Renderer.selectedIndices[2]][0] || Renderer.RotorRotations[2] == RotorTurn[Renderer.selectedIndices[2]][1])
+            {
+                Renderer.RotorRotations[1]++;
+                if (Renderer.RotorRotations[1] == RotorTurn[Renderer.selectedIndices[1]][0] || Renderer.RotorRotations[1] == RotorTurn[Renderer.selectedIndices[1]][1])
+                {
+                    Renderer.RotorRotations[0]++;
+                }
+            }
+
+            if (Renderer.RotorRotations[2] == 27)
+            {
+                Renderer.RotorRotations[2] = 0;
+            }
+
+            if (Renderer.RotorRotations[1] == 27)
+            {
+                Renderer.RotorRotations[1] = 0;
+            }
+
+            if (Renderer.RotorRotations[0] == 27)
+            {
+                Renderer.RotorRotations[0] = 0;
+            }
+        }
 
 
-
-        public static string Converter(string input)
+        public string Converter(string input)
         {
             string output = null;
 
             for (int i = 0; i < input.Length; i++)
             {
-                // Increment
+                Increment();
                 // Code
                 // Add
             }
@@ -38,24 +59,7 @@ namespace program
             return output;
         }
 
-        void Increment()
-        {
-            RotorRotations[2]++;
-            if (RotorRotations[2] == 27)
-            {
-                RotorRotations[2] = 0;
-            }
-
-            if (RotorRotations[1] == 27)
-            {
-                RotorRotations[1] = 0;
-            }
-
-            if (RotorRotations[0] == 27)
-            {
-                RotorRotations[0] = 0;
-            }
-        }
+        
 
     }
 
