@@ -15,6 +15,23 @@ namespace program
 
         public int[][] RotorTurn = { [18, 18], [6, 6], [23, 23], [11, 11], [1, 1], [1, 14], [1, 14], [1, 14] };
 
+        public string Converter(string input)
+        {
+            string output = null;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                Increment();
+
+
+
+                
+            }
+
+            return output;
+        }
+
+
         public void Increment()
         {
             Renderer.RotorRotations[2]++;
@@ -45,19 +62,7 @@ namespace program
         }
 
 
-        public string Converter(string input)
-        {
-            string output = null;
-
-            for (int i = 0; i < input.Length; i++)
-            {
-                Increment();
-                // Code
-                // Add
-            }
-
-            return output;
-        }
+        
 
         
 
