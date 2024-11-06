@@ -20,6 +20,8 @@ namespace IMGUI_Renderer
         public static int[] selectedIndices = { 0, 1, 2 };
         string[] discs = { "Rotor1", "Rotor2", "Rotor3", "Rotor4", "Rotor5", "Rotor6", "Rotor7", "Rotor8" };
         public static int[] RotorRotations = { 0, 0, 0 };
+        public static string[] Reflector = { "UKWB", "UKWC" };
+        public static int CurrentReflector = 0;
   
         protected override void Render()
         {
@@ -95,6 +97,11 @@ namespace IMGUI_Renderer
                 }
 
                 ImGui.SliderInt3("Rotations", ref RotorRotations[0], 0, 26);
+
+                if (ImGui.Combo("Reflector", ref CurrentReflector, Reflector, Reflector.Length))
+                {
+
+                }
 
                 ImGui.EndTabItem();
             }
