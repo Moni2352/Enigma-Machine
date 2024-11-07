@@ -41,12 +41,18 @@ namespace program
 
             for (int i = 0; i < input.Length; i++)
             {
+                if (char.IsAsciiLetter(input[i]))
+                {
                 Increment();
 
                 int ConvertedLetter = LetterConvert(char.ToUpper(input[i]) - 64);
 
                 output = output + char.ToLower(Convert.ToChar(ConvertedLetter + 64));
-            
+                }
+                else
+                {
+                    output = output + input[i];
+                }
             }
 
             return output;

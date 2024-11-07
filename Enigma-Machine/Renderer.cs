@@ -11,7 +11,7 @@ using program;
 
 namespace IMGUI_Renderer
 {
-   
+
     internal class Renderer : Overlay
     {
         program.Main Program = new program.Main();
@@ -22,10 +22,14 @@ namespace IMGUI_Renderer
         public static int[] RotorRotations = { 0, 0, 0 };
         public static string[] Reflector = { "UKWB", "UKWC" };
         public static int CurrentReflector = 0;
-  
+
+        public int PastConverts = 0;
+        List<string> PastTexts = [];
+        List<string> OtherPastTexts = [];
+
         protected override void Render()
         {
-            
+
 
 
             ImGui.Begin("Enigma-M3 Version 1.0");
@@ -39,6 +43,10 @@ namespace IMGUI_Renderer
                 if (ImGui.Button("Convert"))
                 {
                     output = Program.Converter(input);
+                    PastConverts++;
+                    PastTexts.Add(output);
+                    OtherPastTexts.Add(input);
+                    
                 }
                 ImGui.SameLine();
                 if (ImGui.Button("Clear"))
@@ -58,7 +66,21 @@ namespace IMGUI_Renderer
 
             if (ImGui.BeginTabItem("Settings"))
             {
-                ImGui.Text(selectedIndices[0].ToString());
+                // ImGui.Text(selectedIndices[0].ToString()); Debugging
+
+                if (ImGui.Button("Reset Rotations"))
+                {
+                    RotorRotations = [0, 0, 0];
+                }
+                ImGui.SameLine();
+
+                if (ImGui.Button("Full Reset"))
+                {
+                    RotorRotations = [0, 0, 0];
+                    selectedIndices = [0, 1, 2];
+                    CurrentReflector = 0;
+                }
+
                 for (int comboIndex = 0; comboIndex < selectedIndices.Length; comboIndex++)
                 {
                     // Display the current selection or "Select..." if none is selected
@@ -106,13 +128,35 @@ namespace IMGUI_Renderer
                 ImGui.EndTabItem();
             }
 
+            if (ImGui.BeginTabItem("Convertion History"))
+            {
+                if (ImGui.Button("Clear History"))
+                {
+                    PastConverts = 0;
+                    PastTexts = [];
+                    OtherPastTexts = [];
+                    output = "";
+                }
+                if (PastConverts != 0)
+                {
+                    for (int i = 0; i < PastConverts; i++)
+                    {
+                        ImGui.Text(OtherPastTexts[i] + " --> " + PastTexts[i] + "\n");
+                    }
+                }
+                else
+                {
+                    ImGui.Text("No Past Conversions");
+                }
+            }
+
             ImGui.EndTabBar();
 
             ImGui.End();
 
         }
-    
+
 
     }
 }
-    
+
