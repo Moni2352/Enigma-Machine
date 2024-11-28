@@ -30,8 +30,6 @@ namespace IMGUI_Renderer
         protected override void Render()
         {
 
-
-
             ImGui.Begin("Enigma-M3 Version 1.0");
 
             ImGui.BeginTabBar("Tab Bar");
@@ -64,7 +62,7 @@ namespace IMGUI_Renderer
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem("Settings"))
+            if (ImGui.BeginTabItem("Rotor Settings"))
             {
                 // ImGui.Text(selectedIndices[0].ToString()); Debugging
 
@@ -81,6 +79,8 @@ namespace IMGUI_Renderer
                     CurrentReflector = 0;
                 }
 
+
+                // Rotor Changer
                 for (int comboIndex = 0; comboIndex < selectedIndices.Length; comboIndex++)
                 {
                     // Display the current selection or "Select..." if none is selected
@@ -118,12 +118,21 @@ namespace IMGUI_Renderer
                     }
                 }
 
+                // Rotor Rotator
                 ImGui.SliderInt3("Rotations", ref RotorRotations[0], 0, 26);
 
+                // Reflector Changer
                 if (ImGui.Combo("Reflector", ref CurrentReflector, Reflector, Reflector.Length))
                 {
 
                 }
+
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem("PlugBoard Settings"))
+            {
+
 
                 ImGui.EndTabItem();
             }

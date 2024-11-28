@@ -33,6 +33,8 @@ namespace program
 
         };
 
+        
+
         public int[][] RotorTurn = { [18, 18], [6, 6], [23, 23], [11, 11], [1, 1], [1, 14], [1, 14], [1, 14] };
 
         public string Converter(string input)

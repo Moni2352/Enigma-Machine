@@ -8,9 +8,9 @@ using program;
 
 namespace Rotors
 {
-    public class Rotordata
-    {
-        public static readonly Dictionary<int, int> Rotor1 = new Dictionary<int, int>()
+   public class Rotordata
+   {
+      public static readonly Dictionary<int, int> Rotor1 = new Dictionary<int, int>()
         {
            { 1, 5},
            { 2, 11},
@@ -40,7 +40,7 @@ namespace Rotors
            { 26, 10}
         };
 
-        public static readonly Dictionary<int, int> Rotor2 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor2 = new Dictionary<int, int>()
         {
            { 1, 11},
            { 2, 8},
@@ -70,7 +70,7 @@ namespace Rotors
             { 26, 5}
         };
 
-        public static readonly Dictionary<int, int> Rotor3 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor3 = new Dictionary<int, int>()
         {
            { 1, 2},
            { 2, 1},
@@ -100,7 +100,7 @@ namespace Rotors
            { 26, 19}
         };
 
-        public static readonly Dictionary<int, int> Rotor4 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor4 = new Dictionary<int, int>()
         {
            { 1, 5},
            { 2, 19},
@@ -130,7 +130,7 @@ namespace Rotors
            { 26, 6}
         };
 
-        public static readonly Dictionary<int, int> Rotor5 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor5 = new Dictionary<int, int>()
         {
 
            { 1, 14},
@@ -162,7 +162,7 @@ namespace Rotors
 
         };
 
-        public static readonly Dictionary<int, int> Rotor6 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor6 = new Dictionary<int, int>()
         {
 
            { 1, 10},
@@ -194,7 +194,7 @@ namespace Rotors
 
         };
 
-        public static readonly Dictionary<int, int> Rotor7 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor7 = new Dictionary<int, int>()
         {
 
            { 1, 8},
@@ -226,7 +226,7 @@ namespace Rotors
 
         };
 
-        public static readonly Dictionary<int, int> Rotor8 = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> Rotor8 = new Dictionary<int, int>()
         {
 
            { 1, 6},
@@ -258,7 +258,7 @@ namespace Rotors
 
         };
 
-        public static readonly Dictionary<int, int> UKWB = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> UKWB = new Dictionary<int, int>()
         {
 
            { 1, 25},
@@ -290,7 +290,7 @@ namespace Rotors
 
         };
 
-        public static readonly Dictionary<int, int> UKWC = new Dictionary<int, int>()
+      public static readonly Dictionary<int, int> UKWC = new Dictionary<int, int>()
         {
 
            { 1, 6},
@@ -323,6 +323,40 @@ namespace Rotors
         };
 
 
-        
-    }
+
+   }
+
+   public class PlugBoard
+   {
+      public Dictionary<char, char> plugboard = new Dictionary<char, char>()
+            {
+                {'A', 'A'},
+                {'B', 'B'},
+                {'C', 'C'},
+                {'D', 'D'},
+                {'E', 'E'},
+                {'F', 'F'},
+                {'G', 'G'},
+                {'H', 'H'},
+                {'I', 'I'},
+                {'J', 'J'},
+                {'K', 'K'},
+                {'L', 'L'},
+                {'M', 'M'},
+                {'N', 'N'},
+                {'O', 'O'},
+                {'P', 'P'},
+                {'Q', 'Q'},
+                {'R', 'R'},
+                {'S', 'S'},
+                {'T', 'T'},
+                {'U', 'U'},
+                {'V', 'V'},
+                {'W', 'W'},
+                {'X', 'X'},
+                {'Y', 'Y'},
+                {'Z', 'Z'}
+            };
+   }
+
 }
