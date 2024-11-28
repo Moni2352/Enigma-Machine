@@ -133,6 +133,22 @@ namespace IMGUI_Renderer
             if (ImGui.BeginTabItem("PlugBoard Settings"))
             {
 
+                for (int i = 0; i < 10; i++)
+                {
+                    
+                    if (ImGui.BeginCombo($"Plug {i + 1} Side 1", "Preview"))
+                    {
+                        ImGui.EndCombo();
+                    }
+
+                    ImGui.SameLine();
+
+                    if (ImGui.BeginCombo($"Plug {i + 1} Side 2", "Preview"))
+                    {
+                        ImGui.EndCombo();
+                    }
+
+                }
 
                 ImGui.EndTabItem();
             }
