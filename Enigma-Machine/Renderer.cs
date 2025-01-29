@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ImGuiNET;
+﻿using ImGuiNET;
 using ClickableTransparentOverlay;
-using Vortice.DXGI;
-using System.Diagnostics;
-using program;
 
 namespace IMGUI_Renderer
 {
@@ -130,28 +122,24 @@ namespace IMGUI_Renderer
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem("PlugBoard Settings"))
-            {
+            //if (ImGui.BeginTabItem("PlugBoard Settings"))
+            //{
+            //    for (int i = 0; i < 10; i++)
+            //    {
+            //        if (ImGui.BeginCombo($"Plug {i + 1} Side 1", "Preview"))
+            //        {
+            //            ImGui.EndCombo();
+            //        }
 
-                for (int i = 0; i < 10; i++)
-                {
-                    
-                    if (ImGui.BeginCombo($"Plug {i + 1} Side 1", "Preview"))
-                    {
-                        ImGui.EndCombo();
-                    }
+            //        ImGui.SameLine();
 
-                    ImGui.SameLine();
-
-                    if (ImGui.BeginCombo($"Plug {i + 1} Side 2", "Preview"))
-                    {
-                        ImGui.EndCombo();
-                    }
-
-                }
-
-                ImGui.EndTabItem();
-            }
+            //        if (ImGui.BeginCombo($"Plug {i + 1} Side 2", "Preview"))
+            //        {
+            //            ImGui.EndCombo();
+            //        }
+            //    }
+            //    ImGui.EndTabItem();
+            //}
 
             if (ImGui.BeginTabItem("Convertion History"))
             {

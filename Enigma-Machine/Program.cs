@@ -1,5 +1,4 @@
 ﻿using IMGUI_Renderer;
-using Vortice.Mathematics;
 using Rotors;
 
 // start imgui in a seperate thread
